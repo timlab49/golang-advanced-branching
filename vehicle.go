@@ -80,7 +80,7 @@ func init() {
 func main() {
 
 	// Generate ratings for the different vehicles
-	generateReting()
+	generateRating()
 	// Print ratings for the different vehicles
 }
 
@@ -101,10 +101,10 @@ func readJSONFile() Values {
 	return content
 }
 
-func generateReting() {
+func generateRating() {
 	f := readJSONFile()
 	for _, v := range f.Models {
-		var vehResult feedbackResult
+		var vehResult feedbackResult = feedbackResult{}
 		var vehRating rating
 		for _, msg := range v.Feedback {
 			if text:=strings.Split(msg, " "); len(text) >= 5 {
